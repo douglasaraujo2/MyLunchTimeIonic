@@ -1,0 +1,47 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="login-content" padding>
+  <div class="login-box">
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+
+            <ion-item>
+              <ion-input type="email" placeholder="Email" autocapitalize='off' name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+            <!--<ion-item class="checkbox">-->
+              <!--<ion-label>Keep Connected</ion-label>-->
+              <!--<ion-checkbox [(ngModel)]="registerCredentials.isOk" name="isOk"></ion-checkbox>-->
+            <!--</ion-item>-->
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+          <button ion-button type="button" class="register-btn" block clear (click)="createAccount()">Create New Account</button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </div>
+</ion-content>
